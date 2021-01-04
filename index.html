@@ -1920,7 +1920,7 @@
         <!-- DASHBOARD -->
         <div class="dashboard-container">
             <img src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/dashboard.jpg" class="dashboard-img" />
-            <span class="dashboard-subtext">V1 only on ‎‎‎‎‎‏‏‎<span style="font-family: AvenirNextMedium">desktop</span>.</span>
+            <span class="dashboard-subtext">V1 only on ‎‎‎‎‎‏‏‎desktop.</span>
         </div>
 
         <!-- INVOLVERA SYSTEM -->
@@ -2397,7 +2397,6 @@ function scrollToY(scrollTargetY, speed, easing) {
 
 
 function openHeaderView(){
-    lockScroll()
     document.body.innerHTML += `
         <div id="header-menu" class="background-header-view">
             <div class="header-menu-small-fixed" onclick="closeHeaderView()">
@@ -2409,6 +2408,7 @@ function openHeaderView(){
 
         </div>
     `;
+    lockScroll()
 }
 
 function closeHeaderView(){
