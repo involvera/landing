@@ -56,6 +56,16 @@
             align-items: center;
         }
 
+        .noselect {
+            -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+        }
+
         a { text-decoration: none; color: inherit; }
 
         body {
@@ -1778,6 +1788,43 @@
     }
 </style>
 
+<style>
+    .background-header-view {
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-menu-small-fixed {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .menu-small-text {
+        cursor: pointer;
+        font-size: 25px;
+        padding: 30px;
+        letter-spacing: 1px;
+        font-family: AvenirNextHeavy;
+        color: #353535;
+    }
+
+
+</style>
+
+
 
 <title>Involvera</title>
 </head>
@@ -1786,17 +1833,17 @@
 
     <!-- HEADER -->
     <header>
-        <a href="https://google.com" class="involvera-full-logo">
+        <a href="https://involvera.com" class="involvera-full-logo">
             <img class="involvera-logo-left" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/Involvera.png"/>
             <img class="involvera-logo-right" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/nvolvera.png"/>
         </a>
         <ul class="header-menu-large">
-            <li class="header-li" onclick="scrollToBroadly()" ><a>BROADLY</a></li>
+            <li class="header-li" onclick="scrollToBroadly()"><a>SYSTEM</a></li>
             <li class="header-li header-li-space" onclick="scrollToVision()"><a>VISION</a></li>
-            <li class="header-li header-li-space"><a target="_blank" href="http://google.com">TOKEN</a></li>
-            <li class="header-li header-li-space"><a target="_blank" href="http://google.com">TEAM</a></li>
+            <li class="header-li header-li-space"><a target="_blank" href="https://www.notion.so/Token-INV-43eaff8b7430425bb489dd4274f074dc">TOKEN</a></li>
+            <li class="header-li header-li-space"><a href="https://www.notion.so/Team-d63c4f4109654b5683396fae875eafc4" target="_blank">TEAM</a></li>
         </ul>
-        <div class="header-menu-small" onclick="onClickMenu()">
+        <div class="header-menu-small" onclick="openHeaderView()">
             <img id="menu-icon" width="15px" height="15px" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/menu-button.png" />
         </div>
     </header>
@@ -2099,12 +2146,12 @@
         <div class="footer-menu-large">
             <ul class="footer-menu-left">
                 <li class="footer-li footer-li-space-big"><a style="cursor:pointer;" onclick="scrollToTop()">WELCOME</a></li>
-                <li class="footer-li footer-li-space-big"><a target="_blank" href="http://google.com">TEAM</a></li>
-                <li class="footer-li"><a target="_blank" href="http://google.com">TOKEN</a></li>
+                <li class="footer-li footer-li-space-big"><a href="https://www.notion.so/Team-d63c4f4109654b5683396fae875eafc4" target="_blank">TEAM</a></li>
+                <li class="footer-li"><a href="https://www.notion.so/Token-INV-43eaff8b7430425bb489dd4274f074dc" target="_blank">TOKEN</a></li>
             </ul>
             <ul class="footer-menu-left">
-                <a target="_blank" href="https://twitter.com/involvera_" class="social-media-icon social-media-twitter footer-li-space"><img class="social-media-icon-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/twitter.png"/></a>
-                <a target="_blank" href="https://raw.githubusercontent.com/involvera" class="social-media-icon social-media-github footer-li-space"><img class="social-media-icon-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/github.png"/></a>
+                <a target="_blank" href="https://twitter.com/Involvera_com" class="social-media-icon social-media-twitter footer-li-space"><img class="social-media-icon-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/twitter.png"/></a>
+                <a target="_blank" href="https://github.com/involvera" class="social-media-icon social-media-github footer-li-space"><img class="social-media-icon-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/github.png"/></a>
                 <a target="_blank" href="http://google.com" class="social-media-icon social-media-telegram"><img class="social-media-icon-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/telegram.png"/></a>
             </ul>
         </div>
@@ -2277,7 +2324,6 @@
 </script>
 
 <script>
-
 function offset(el) {
     var rect = el.getBoundingClientRect(),
     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
@@ -2344,27 +2390,62 @@ function scrollToY(scrollTargetY, speed, easing) {
             window.scrollTo(0, scrollTargetY);
         }
     }
-
     // call it once to get started
     tick();
 }
 
+
+function openHeaderView(){
+    lockScroll()
+    document.body.innerHTML += `
+        <div id="header-menu" class="background-header-view">
+            <div class="header-menu-small-fixed" onclick="closeHeaderView()">
+                <img id="menu-icon" width="15px" height="15px" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/cross-clear-grey.png" />
+            </div>
+            <a class="menu-small-text" onclick="scrollToVisionSmall()">Vision</a>
+            <a href="https://www.notion.so/Team-d63c4f4109654b5683396fae875eafc4" target="_blank" class="menu-small-text">Team</a>
+            <a href="https://www.notion.so/Token-INV-43eaff8b7430425bb489dd4274f074dc" target="_blank" class="menu-small-text" style="margin-bottom: 150px;">Token</a>
+
+        </div>
+    `;
+}
+
+function closeHeaderView(){
+    var element = document.getElementById("header-menu"); 
+    element.parentNode.removeChild(element);
+    unlockScroll()
+}
+
+function lockScroll(){
+    document.getElementsByTagName('body')[0].style.height = '100%';
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+}
+
+function unlockScroll(){
+    document.getElementsByTagName('body')[0].style.height = 'auto';
+    document.getElementsByTagName('body')[0].style.overflow = 'scroll';
+}
+
 function scrollToTop() {
     scrollToY(0, 1000, 'easeInOutQuint')
-};
+}
 
 function scrollToBroadly(){
-    const e = document.getElementsByClassName('broadly-container')
+    const e = document.getElementsByClassName('system-container')
     var divOffset = offset(e[0]);
-    scrollToY(divOffset.top - 200, 1000, 'easeOutSine')
+    scrollToY(divOffset.top - 100, 500, 'easeOutSine')
 }
 
 function scrollToVision(){
     const e = document.getElementsByClassName('system-container')
     var divOffset = offset(e[1]);
-    scrollToY(divOffset.top - 200, 1000, 'easeOutSine')
+    scrollToY(divOffset.top - 100, 1000, 'easeOutSine')
+}
+
+function scrollToVisionSmall(){
+    closeHeaderView()
+    scrollToVision()
 }
 
 </script>
-
 </html>
