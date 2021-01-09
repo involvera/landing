@@ -9,14 +9,6 @@
             src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-Bold-01.ttf"); 
         }
         @font-face {
-            font-family: AvenirNextHeavy;
-            src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-Heavy-09.ttf"); 
-        }
-        @font-face {
-            font-family: AvenirNextDemiBold;
-            src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-DemiBold-03.ttf"); 
-        }
-        @font-face {
             font-family: AvenirNextMedium;
             src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-Medium-06.ttf"); 
         }
@@ -24,7 +16,14 @@
             font-family: AvenirNextRegular;
             src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-Regular-08.ttf"); 
         }
-
+        @font-face {
+            font-family: AvenirNextDemiBold;
+            src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-DemiBold-03.ttf"); 
+        }
+        @font-face {
+            font-family: AvenirNextHeavy;
+            src: url("https://raw.githubusercontent.com/involvera/landing/master/srcs/fonts/AvenirNext-Heavy-09.ttf"); 
+        }
         @font-face {
             font-family: AvenirNextRegular;
             font-style: italic;
@@ -67,6 +66,8 @@
                                             supported by Chrome, Edge, Opera and Firefox */
         }
 
+
+
         a { text-decoration: none; color: inherit; }
 
         html {
@@ -82,6 +83,11 @@
             padding: 0;
             overflow-x: hidden;
             width: 100%;
+        }
+
+        .medium-text {
+            font-family: AvenirNextMedium;
+           color: #353535;
         }
 
         .demibold-text {
@@ -389,6 +395,14 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .receive-submit-loader {
+            display: none;
+            content: url(https://raw.githubusercontent.com/involvera/landing/master/srcs/img/loading.svg);
+            height: 26px;
+            margin-left: 40px;
+            margin-right: 40px;
         }
 
         .receive-submit-button {
@@ -1284,18 +1298,16 @@
         flex-direction: column;
     }
 
+    .dna-cover-img {
+        background-color: rgb(25,24,24);
+    }
+
     .dna-separator {
         margin-top: 40px;
         margin-bottom: 40px;
         width: 20%;
         background-color: #DDDDDD;
         height: 1px;
-    }
-
-    .dna-cover-img {
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
     }
 
     .dna-catch-text {
@@ -1355,7 +1367,6 @@
 
         .dna-cover-img {
             width: 100%;
-            height: 333px;
         }
 
         .dna-catch-text {
@@ -1405,6 +1416,11 @@
             width: 1.5px;
             height: 300px;
         }
+        .dna-cover-img {
+            min-width: 170%;
+            margin-left: -35%;
+            object-fit: cover;
+        }
 
     }
 
@@ -1414,7 +1430,6 @@
         }
         .dna-cover-img {
             width: 100%;
-            height: 360px;
         }
         .dna-catch-text {
             width: 90%;
@@ -1460,6 +1475,11 @@
             width: 2px;
             height: 300px;
         }
+        .dna-cover-img {
+            min-width: 160%;
+            margin-left: -30%;
+            object-fit: cover;
+        }
 
 
     }
@@ -1473,9 +1493,20 @@
             margin-top: 150px;
             margin-bottom: 150px;
         }
+        .dna-cover-img {
+            min-width: 200%;
+            margin-left: -50%;
+            object-fit: cover;
+        }
     }    
     
     @media(min-width:1200px){
+        .dna-cover-img {
+            min-width: 250%;
+            margin-left: -75%;
+            object-fit: cover;
+        }
+
     }
 </style>
 
@@ -1826,11 +1857,7 @@
         font-family: AvenirNextHeavy;
         color: #353535;
     }
-
-
 </style>
-
-
 
 <title>Involvera</title>
 </head>
@@ -1838,7 +1865,7 @@
 <body>
 
     <!-- HEADER -->
-    <header>
+    <header class="noselect">
         <a href="https://involvera.com" class="involvera-full-logo">
             <img class="involvera-logo-left" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/Involvera.png"/>
             <img class="involvera-logo-right" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/nvolvera.png"/>
@@ -1861,7 +1888,7 @@
                 <h1 class="main-title">Expand your open source project.</h1>
                 <h2 class="main-description">Involvera is a platform allowing open source projects to develop and manage their community without central authority.</h2>
                 
-                <a id="link-paper-lg" target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper">
+                <a id="link-paper-lg" target="_blank" href="https://github.com/involvera/white-paper" class="link-paper-wrapper noselect">
                     <span class="link-paper-text">Non-technical white paper</span>
                     <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                 </a>
@@ -1882,7 +1909,7 @@
                     </div>
                 </div>
 
-                <a id="link-paper-sm" target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper">
+                <a id="link-paper-sm" target="_blank" href="https://github.com/involvera/white-paper" class="link-paper-wrapper noselect">
                     <span class="link-paper-text">Non-technical white paper</span>
                     <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                 </a>
@@ -1904,7 +1931,7 @@
                
                     <div class="progress-bar"><div class="filled-progress-bar" style="width: 100px;"></div></div>
                
-                    <a target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper">
+                    <a target="_blank" href="https://github.com/involvera/white-paper" class="link-paper-wrapper noselect">
                         <span class="link-paper-text">Non-technical white paper</span>
                         <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                     </a>
@@ -1914,9 +1941,10 @@
                     <h4 class="receive-title">RECEIVE <span style="font-family: AvenirNextDemiBold;">21,530 INV</span> (AIRDROP)</h4>
                     <input class="mail-input" placeholder="your@email.com" type="text" onfocus="onFocusInput()" onblur="onBlurInput()" oninput="onChangeText()"/>
                     <div class="input-bottom-bar"></div>
-                    <div class="receive-bottom-container">
-                        <a href="#token" class="link-paper-text">See about token</a>
-                        <button id="submit-button" class="receive-submit-button">Receive</button>
+                    <div class="receive-bottom-container noselect">
+                        <a href="https://www.notion.so/Token-INV-43eaff8b7430425bb489dd4274f074dc" target="_blank" class="link-paper-text">See about token</a>
+                        <img class="receive-submit-loader" />
+                        <button onclick="onSubmitReceive()" id="submit-button" class="receive-submit-button">Receive</button>
                     </div>
                 </div>
             </div>
@@ -1950,12 +1978,12 @@
                         </div>
                         <h4 class="broadly-title-text">Based on an expiring social currency.</h4>
                         <p class="broadly-description-text">Every community has their own economy based on an <span class="demibold-text">expiring cryptocurrency</span> to govern social laws.</p>
-                        <a target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper seemore-wrapper ">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#economy-and-its-philosophy" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
                     </div>
-                    <div class="broadly-case">
+                    <div class="broadly-case noselect">
                         <div id="broadly-icon-2" class="broadly-icon-wrapper">
                             <img class="broadly-icon-small" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/coin.png" />
                         </div>
@@ -1982,13 +2010,13 @@
                         </div>
                         <h4 class="broadly-title-text">Sharing content costs and is rewarded.</h4>
                         <p class="broadly-description-text">Features allowing you to interact with the community have a <span class="demibold-text">monetary cost</span> and <span class="demibold-text">reward</span>.</p>
-                        <a target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper seemore-wrapper">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#based-on-the-threads-activity" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
                     </div>
 
-                    <div class="broadly-case">
+                    <div class="broadly-case noselect">
                         <div id="broadly-icon-2" class="broadly-icon-wrapper">
                             <img class="broadly-icon-big" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/watering-can.png" />
                         </div>
@@ -2030,28 +2058,28 @@
                 </div>
 
                 <div class="broadly-line broadly-line-even broadly-line-space">
-                    
+
                     <div class="broadly-case">
                         <div id="broadly-icon" class="broadly-icon-wrapper">
                             <img class="broadly-icon-big" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/proposal.png" />
                         </div>
                         <h4 class="broadly-title-text">Everything is decided by proposal.</h4>
                         <p class="broadly-description-text">Community <span class="demibold-text">decisions</span>, including sharing costs, <span class="demibold-text">are voted</span> by proposals.</p>
-                        <a target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper seemore-wrapper">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#proposal" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
                     </div>
 
-                    <div class="broadly-case">
+                    <div class="broadly-case noselect">
                         <div id="broadly-icon-2" class="broadly-icon-wrapper">
                             <img class="broadly-icon-big" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/proposal.png" />
                         </div>
                         <div class="proposal-img-wrapper">
                             <img class="proposal-list-img"/>
                         </div>
-
                     </div>
+
                 </div>
 
                 <div class="broadly-line broadly-line-odd broadly-line-space">
@@ -2061,13 +2089,13 @@
                         </div>
                         <h4 class="broadly-title-text">Members are hierarchized by a reputation system.</h4>
                         <p class="broadly-description-text">Every <span class="demibold-text">member</span> owns a <span class="demibold-text">reputation amount</span> acquired by sharing quality content with the community.<br />It <span class="demibold-text">defines</span> individual <span class="demibold-text">vote power</span> on <span class="demibold-text">proposals</span>.</p>
-                        <a target="_blank" href="https://raw.githubusercontent.com/involvera/white-paper" class="link-paper-wrapper seemore-wrapper">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#reputation" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
                     </div>
 
-                    <div class="broadly-case">
+                    <div class="broadly-case noselect">
                         <div id="broadly-icon-2" class="broadly-icon-wrapper">
                             <img class="broadly-icon-small" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/justice.png" />
                         </div>
@@ -2104,10 +2132,11 @@
         </div>
 
 
+
         <!-- DNA -->
         <div class="parent">
             <div class="dna-container">
-                <img class="dna-cover-img" src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"/>
+                <img class="dna-cover-img" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/baneer-small.jpg"/>
                 <p class="dna-catch-text">In its DNA, Involvera provides <span class="bold-text">crypto organizations</span> to <span class="bold-text">manage</span> and <span class="bold-text">develop</span> themselves in a fully decentralized way.</p>
                 <div style="display:flex; flex-direction: row; justify-content: center;"><div class="dna-separator"></div></div>
                 <p class="dna-text">
@@ -2132,23 +2161,23 @@
         <!-- END ACTIONS  -->
         <div class="parent">
             <div class="end-a-container">
-                <p class="end-a-intro-text">Hey! Before you leave, we are giving away <span class="demibold-text">INV coins</span> to the first members of Involvera.<br />Add up your email we will notice you when we release and when you can withdraw your coins...</p>
+                <p class="end-a-intro-text">BTW, we are giving away <span class="demibold-text">INV coins</span> to the first members of Involvera.<br />Add up your email to get your coins:</p>
             </div>
             <div class="end-a-receive-container">
                 <h4 class="end-a-receive-title">RECEIVE <span class="demibold-text">21,530 INV</span> (AIRDROP)</h4>
                 <input class="end-a-mail-input" placeholder="your@email.com" type="text" onfocus="onFocusInput2()" onblur="onBlurInput2()" oninput="onChangeText2()"/>
                 <div class="end-a-input-bottom-bar"></div>
-                <div class="end-a-receive-bottom-container">
-                    <a href="#token" class="end-a-link-paper-text">See about token</a>
-                    <button id="submit-button2" class="end-a-receive-submit-button">Receive</button>
+                <div class="end-a-receive-bottom-container noselect">
+                    <a href="https://www.notion.so/Token-INV-43eaff8b7430425bb489dd4274f074dc" target="_blank" class="end-a-link-paper-text">See about token</a>
+                    <img class="receive-submit-loader" />
+                    <button onclick="onSubmitReceive()" id="submit-button2" class="end-a-receive-submit-button">Receive</button>
                 </div>
             </div>
         </div>
-
     </main>
 
      <!-- FOOTER -->
-    <footer>
+    <footer class="noselect">
         <div class="footer-menu-large">
             <ul class="footer-menu-left">
                 <li class="footer-li footer-li-space-big"><a style="cursor:pointer;" onclick="scrollToTop()">WELCOME</a></li>
@@ -2207,6 +2236,8 @@
         }
         e1[0].style.backgroundColor = color
         e2[0].style.border = '1px solid ' + color
+
+        setInputBorderColor2(color)
     }
 
     function onFocusInput(){
@@ -2221,7 +2252,7 @@
         }
     }
 
-    function onChangeText(){
+    function setStyleOnInputChange(){
         if (validateEmail(getInputContent())){
             document.getElementById("submit-button").style.backgroundColor = '#353535'
             document.getElementById("submit-button").style.boxShadow = '0px 0px 10px rgba(53,53,53,0.4)'
@@ -2231,6 +2262,21 @@
             document.getElementById("submit-button").style.backgroundColor = '#999999'
             document.getElementById("submit-button").style.boxShadow = '0px 0px 7px rgba(53,53,53,0.2)'
         }
+
+        if (validateEmail(getInputContent2())){
+            document.getElementById("submit-button2").style.backgroundColor = '#353535'
+            document.getElementById("submit-button2").style.boxShadow = '0px 0px 10px rgba(53,53,53,0.4)'
+            document.getElementById("submit-button2").style.cursor = 'pointer'
+        } else {
+            document.getElementById("submit-button2").style.cursor = 'not-allowed'
+            document.getElementById("submit-button2").style.backgroundColor = '#999999'
+            document.getElementById("submit-button2").style.boxShadow = '0px 0px 7px rgba(53,53,53,0.2)'
+        }
+    }
+
+    function onChangeText(){
+        setValueToInputs(getInputContent())
+        setStyleOnInputChange()
     }
 </script>
 
@@ -2272,22 +2318,75 @@
             setInputBorderColor('#EAEAEA')
         }
     }
-
-    function onChangeText(){
-        if (validateEmail(getInputContent())){
-            document.getElementById("submit-button").style.backgroundColor = '#353535'
-            document.getElementById("submit-button").style.boxShadow = '0px 0px 10px rgba(53,53,53,0.4)'
-            document.getElementById("submit-button").style.cursor = 'pointer'
-        } else {
-            document.getElementById("submit-button").style.cursor = 'not-allowed'
-            document.getElementById("submit-button").style.backgroundColor = '#999999'
-            document.getElementById("submit-button").style.boxShadow = '0px 0px 7px rgba(53,53,53,0.2)'
-        }
-    }
 </script>
 
  <!-- END ACTIONS -->
  <script>
+
+    function onSubmitReceive(){
+        const b = document.getElementsByClassName("receive-submit-button")[0]
+        const i = document.getElementsByClassName("receive-submit-loader")[0]
+        const b2 = document.getElementsByClassName("end-a-receive-submit-button")[0]
+        const i2 = document.getElementsByClassName("receive-submit-loader")[1]
+        
+        const enableLoading = () => {
+            b.style.display = 'none'
+            i.style.display = 'inherit'
+            b2.style.display = 'none'
+            i2.style.display = 'inherit'
+        }
+
+        const disableLoading = () => {
+            b.style.display = 'inherit'
+            i.style.display = 'none'
+            b2.style.display = 'inherit'
+            i2.style.display = 'none'
+        }
+
+        if (validateEmail(getInputContent())){
+            enableLoading()
+            fetch('https://involvera.com:3000/user', {
+                method: 'post',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({email: getInputContent()})
+            }).then((res) => {
+                disableLoading()
+                if (res.status == 201 || res.status == 409) {
+                    setValueToInputs("")
+                    Swal.fire({
+                        toast: true,
+                        position: 'bottom-start',
+                        icon: 'success',
+                        title: 'Registered.',
+                        text: 'You will receive an email when your INVs are ready.',
+                        customClass: {
+                            title: "demibold-text",
+                            content: "medium-text"
+                        }
+                    })
+                } else {
+                    if (res.status == 429 || res.status == 500){
+                        res.text().then((val) => {
+                            const jsonVal = JSON.parse(val)
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error.',
+                                text: jsonVal.error,
+                                customClass: {
+                                    title: "demibold-text",
+                                    content: "medium-text"
+                                }
+                            })
+                        })
+                    }
+                }
+            })
+        }
+    }
+
     function getInputContent2(){
         return document.getElementsByClassName("end-a-mail-input")[0].value
     }
@@ -2306,26 +2405,26 @@
 
     function onFocusInput2(){
         if (getInputContent2().length == 0){
-            setInputBorderColor2('#353535')
+            setInputBorderColor('#353535')
         }
     }
 
     function onBlurInput2(){
         if (getInputContent2().length == 0){
-            setInputBorderColor2('#EAEAEA')
+            setInputBorderColor('#EAEAEA')
         }
     }
 
-    function onChangeText2(){
-        if (validateEmail(getInputContent2())){
-            document.getElementById("submit-button2").style.backgroundColor = '#353535'
-            document.getElementById("submit-button2").style.boxShadow = '0px 0px 10px rgba(53,53,53,0.4)'
-            document.getElementById("submit-button2").style.cursor = 'pointer'
-        } else {
-            document.getElementById("submit-button2").style.cursor = 'not-allowed'
-            document.getElementById("submit-button2").style.backgroundColor = '#999999'
-            document.getElementById("submit-button2").style.boxShadow = '0px 0px 7px rgba(53,53,53,0.2)'
-        }
+    function setValueToInputs(value){
+        const input1 = document.getElementsByClassName("mail-input")[0]
+        const input2 = document.getElementsByClassName("end-a-mail-input")[0]
+        input1.value = value
+        input2.value = value
+    }
+
+    function onChangeText2(value){
+        setValueToInputs(getInputContent2())
+        setStyleOnInputChange()
     }
 </script>
 
@@ -2452,6 +2551,6 @@ function scrollToVisionSmall(){
     closeHeaderView()
     scrollToVision()
 }
-
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>
