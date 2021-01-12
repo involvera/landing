@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" href="https://siasky.net/AABaV5HytmPhMOPYkzFfgYvFYLFttFcRaVHdx58B_d0IYQ"/>
+    <link rel="icon" href="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/ico.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <style>
         @font-face {
@@ -1900,7 +1900,7 @@
                     </div>
     
                     <div class="progress-bar">
-                        <div class="filled-progress-bar" style="width: 90px;"></div>
+                        <div class="filled-progress-bar" style="width: 0px;"></div>
                     </div>
     
                     <div style="text-align: right;">
@@ -1929,7 +1929,7 @@
                         </div>
                     </div>
                
-                    <div class="progress-bar"><div class="filled-progress-bar" style="width: 100px;"></div></div>
+                    <div class="progress-bar"><div class="filled-progress-bar" style="width: 0px;"></div></div>
                
                     <a target="_blank" href="https://github.com/involvera/white-paper" class="link-paper-wrapper noselect">
                         <span class="link-paper-text">Non-technical white paper</span>
@@ -1978,7 +1978,7 @@
                         </div>
                         <h4 class="broadly-title-text">Based on an expiring social currency.</h4>
                         <p class="broadly-description-text">Every community has their own economy based on an <span class="demibold-text">expiring cryptocurrency</span> to govern social laws.</p>
-                        <a target="_blank" href="https://github.com/involvera/white-paper#economy-and-its-philosophy" class="link-paper-wrapper seemore-wrapper noselect">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#economy" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
@@ -2010,7 +2010,7 @@
                         </div>
                         <h4 class="broadly-title-text">Sharing content costs and is rewarded.</h4>
                         <p class="broadly-description-text">Features allowing you to interact with the community have a <span class="demibold-text">monetary cost</span> and <span class="demibold-text">reward</span>.</p>
-                        <a target="_blank" href="https://github.com/involvera/white-paper#based-on-the-threads-activity" class="link-paper-wrapper seemore-wrapper noselect">
+                        <a target="_blank" href="https://github.com/involvera/white-paper#distribution" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
@@ -2088,8 +2088,8 @@
                             <img class="broadly-icon-small" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/justice.png" />
                         </div>
                         <h4 class="broadly-title-text">Members are hierarchized by a reputation system.</h4>
-                        <p class="broadly-description-text">Every <span class="demibold-text">member</span> owns a <span class="demibold-text">reputation amount</span> acquired by sharing quality content with the community.<br />It <span class="demibold-text">defines</span> individual <span class="demibold-text">vote power</span> on <span class="demibold-text">proposals</span>.</p>
-                        <a target="_blank" href="https://github.com/involvera/white-paper#reputation" class="link-paper-wrapper seemore-wrapper noselect">
+                        <p class="broadly-description-text">Every <span class="demibold-text">member</span> owns a <span class="demibold-text">vote power amount</span> acquired by sharing quality content with the community.</p>
+                        <a target="_blank" href="https://github.com/involvera/white-paper#vote-power" class="link-paper-wrapper seemore-wrapper noselect">
                             <span class="link-paper-text seemore-text">See more</span>
                             <img class="link-paper-icon" src="https://raw.githubusercontent.com/involvera/landing/master/srcs/img/external-link.png"/>
                         </a>
@@ -2551,6 +2551,33 @@ function scrollToVisionSmall(){
     closeHeaderView()
     scrollToVision()
 }
+
+function setProgressBar(){
+    const start = 1601550000000
+    const end = 1615809600000
+    const now = new Date().getTime()
+
+    const percent = (now - start) / (end - start)
+    
+    const bar0 = document.getElementsByClassName('progress-bar')[0]
+    const bar1 = document.getElementsByClassName('progress-bar')[1]
+    const filled0 = document.getElementsByClassName("filled-progress-bar")[0]
+    const filled1 = document.getElementsByClassName("filled-progress-bar")[1]
+
+    if (bar0.offsetWidth){
+        filled0.style.width = percent * bar0.offsetWidth + 'px'
+    } else {
+        filled1.style.width = percent * bar1.offsetWidth + 'px'
+    }
+
+}
+
+setProgressBar()
+
+
+
+
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>
